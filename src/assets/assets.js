@@ -18,8 +18,6 @@ import bgImage from './bgImage.svg'
 import pic1 from './pic1.png'
 import pic2 from './pic2.png'
 import pic3 from './pic3.png'
-import pic4 from './pic4.png'
-import img1 from './img1.jpg'
 import img2 from './img2.jpg'
 
 const assets = {
@@ -40,7 +38,7 @@ const assets = {
 
 export default assets;
 
-export const imagesDummyData = [pic1, pic2, pic3, pic4, pic1, pic2]
+export const imagesDummyData = [pic1, pic2, pic3, pic1, pic2]
 
 export const userDummyData = [
     {
@@ -117,7 +115,7 @@ export const messagesDummyData = [
         "_id": "680f573cf10f3cd28382f0c0",
         "senderId": "680f50e4f10f3cd28382ecf9",
         "receiverId": "680f5116f10f3cd28382ed02",
-        "image": img1,
+        "image": img2,
         "seen": true,
         "createdAt": "2025-04-28T10:23:56.265Z",
     },
