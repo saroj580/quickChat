@@ -13,6 +13,7 @@ import messageRouter from './routes/message.route.js';
 // Create express app and HTTP server
 const app = express();
 const PORT = process.env.PORT || 5000;
+const server = http.createServer(app);
 
 //  Initialize socket.io server
 export const io = new Server(server, {
@@ -57,7 +58,6 @@ app.use('/api/v1', (req, res) => {
 app.use('/api/auth', userRouter)
 app.use('/api/messages', messageRouter);
 
-const server = http.createServer(app);
 server.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 })
