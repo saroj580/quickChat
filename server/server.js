@@ -5,6 +5,7 @@ import http from 'http';
 
 //importing the file
 import { connectDB } from './lib/db.js';
+import userRouter from './routes/user.route.js';
 
 // Create express app and HTTP server
 const app = express();
@@ -20,6 +21,8 @@ app.use(cors());
 app.use('/api/v1', (req, res) => {
     res.send("Server is live");
 })
+//Route setup
+app.use('/api/auth', userRouter)
 
 
 const server = http.createServer(app);
