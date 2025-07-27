@@ -73,7 +73,7 @@ export const AuthProvider = ({ children }) => {
 
     // Connect socket function to handle socket connection and online users updates
     const connectSocket = (userData) => {
-        if (!userData || socket?.connected) reutrn;
+        if (!userData || socket?.connected) return;
         const newSocket = io(backendUrl, {
             query: {
                 userId: userData._id,
@@ -88,11 +88,11 @@ export const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        if (token) {
+        if (token && !authUser) { // Only call checkAuth if token exists and authUser is not set
             axios.defaults.headers.common["token"] = token;
+            checkAuth();
         }
-        checkAuth();
-    }, [])
+    }, [token, authUser]) // Add authUser to dependency array
     
     const value = {
         axios,
